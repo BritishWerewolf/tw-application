@@ -1,0 +1,12 @@
+{
+  "name": "tw-application",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.19",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

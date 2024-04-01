@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tailwind Application</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <script src="js/bundle.js" defer></script>
+</head>
+<body>
+    <h1 class="text-3xl">Hello, World!</h1>
+
+    <h2>Projects</h2>
+    <tab-view current="output">
+        <section class="controls">
+            <tab-view-control to="template">Template</tab-view-control>
+            <tab-view-control to="markdown">Markdown</tab-view-control>
+            <tab-view-control to="output">Output</tab-view-control>
+        </section>
+
+        <tab-page page="template">
+            <output id="template" contenteditable>Template</output>
+        </tab-page>
+
+        <tab-page page="markdown">
+            <output id="markdown" contenteditable>Markdown</output>
+        </tab-page>
+
+        <tab-page page="output">
+            <output id="output">Output</output>
+        </tab-page>
+    </tab-view>
+    <button id="convert">Convert</button>
+</body>
+</html>

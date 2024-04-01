@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+tab-view .controls {
+    @apply my-2
+}
+
+tab-view-control {
+    @apply  p-2 border-2 border-gray-700 border-solid rounded cursor-pointer;
+}
+
+tab-view-control.active {
+    @apply bg-red-500;
+}
+
+#template, #markdown {
+    @apply whitespace-pre;
+}

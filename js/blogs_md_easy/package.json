@@ -1,0 +1,32 @@
+{
+  "name": "blogs-md-easy-wasm",
+  "collaborators": [
+    "British Werewolf <britishwerewolfdev@gmail.com>"
+  ],
+  "description": "Iteratively convert a collection of Markdown files into a respective HTML template.",
+  "version": "0.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BritishWerewolf/blogs-md-easy-wasm"
+  },
+  "files": [
+    "blogs_md_easy_wasm_bg.wasm",
+    "blogs_md_easy_wasm.js",
+    "blogs_md_easy_wasm_bg.js",
+    "blogs_md_easy_wasm.d.ts"
+  ],
+  "module": "blogs_md_easy_wasm.js",
+  "homepage": "https://github.com/BritishWerewolf/blogs-md-easy-wasm",
+  "types": "blogs_md_easy_wasm.d.ts",
+  "sideEffects": [
+    "./blogs_md_easy_wasm.js",
+    "./snippets/*"
+  ],
+  "keywords": [
+    "markdown",
+    "html",
+    "template",
+    "blog"
+  ]
+}
