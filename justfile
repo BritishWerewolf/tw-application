@@ -14,10 +14,20 @@ build-css target="development":
 build-js target="development":
     bunx webpack --mode {{ target }}
 
-# Build assets. module: ["css", "js", "all"]
-build target="development" *modules="css js":
+[private]
+builder target="development" *modules="css js":
     {{ if modules =~ "css" { "just build-css " + target } else { "" } }}
     {{ if modules =~ "js"  { "just build-js "  + target } else { "" } }}
+
+# Build assets for production. module: ["css", "js", "all"]
+build *modules="css js":
+    {{ if modules =~ "css" { "just build-css production" } else { "" } }}
+    {{ if modules =~ "js"  { "just build-js production"  } else { "" } }}
+
+# Build assets for development. module: ["css", "js", "all"]
+build-dev *modules="css js":
+    {{ if modules =~ "css" { "just build-css development" } else { "" } }}
+    {{ if modules =~ "js"  { "just build-js development"  } else { "" } }}
 
 ################################################################################
 # Watch
