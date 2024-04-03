@@ -11,28 +11,145 @@
     <script src="js/bundle.js" defer></script>
 </head>
 <body>
-    <h1 class="text-3xl">Hello, World!</h1>
+    <main>
+        <h1>Hello, <s>World</s> Tailwind!</h1>
+        <p>
+            Hey I'm Harry Cartwright.<br>
+            I've been writing programs since I was 12, and in the <a href="https://stackexchange.com/leagues/1/alltime/stackoverflow/2008-07-31/3578036#3578036">top 10% of users on StackOverflow</a>.<br>
+            With a passion for simplicity, and love of the basics; I like to achieve as much as possible, with the fewest amount of dependencies.
+        </p>
 
-    <h2>Projects</h2>
-    <tab-view current="output">
-        <section class="controls">
-            <tab-view-control to="template">Template</tab-view-control>
-            <tab-view-control to="markdown">Markdown</tab-view-control>
-            <tab-view-control to="output">Output</tab-view-control>
-        </section>
+        <h2>What I've Done</h2>
+        <p>While you try not to sing Linkin Park, I'll explain the projects I've worked on.</p>
 
-        <tab-page page="template">
-            <output id="template" contenteditable>Template</output>
-        </tab-page>
+        <h3>Blogs Made Easy</h3>
+        <p>My latest project (<a href="https://crates.io/crates/blogs-md-easy">Blogs Made Easy</a>) was something I created for <a href="https://britishwerewolf.github.io">my portfolio</a>.</p>
+        <p>
+            It's a Command Line Interface (CLI) tool, that I wrote completely in Rust; it parses a template HTML file, and a list of Markdown files. By using placeholders within the template, and adding corresponding values in the Markdown, it will create a new HTML file for each Markdown.<br>
+            This is ideal for me as I write my blogs in Markdown, but can ensure that the template that I have is the same for all blog entries; or if I were to update the template, that change can be reflected across the entire site.
+        </p>
+        <p>
+            I am currently working on a rework of the library so that I can create both a binary and a Web Assembly (WASM) build too.<br>
+            Below is the build as a WASM module embedded in this site so you can see it in action.
+        </p>
+        <tab-view current="markdown">
+            <section class="controls">
+                <tab-view-control to="template">Template</tab-view-control>
+                <tab-view-control to="markdown">Markdown</tab-view-control>
+            </section>
 
-        <tab-page page="markdown">
-            <output id="markdown" contenteditable>Markdown</output>
-        </tab-page>
+            <section class="pages">
+                <section>
+                    <tab-page page="template">
+                        <textarea id="template">Template</textarea>
+                    </tab-page>
 
-        <tab-page page="output">
-            <output id="output">Output</output>
-        </tab-page>
-    </tab-view>
-    <button id="convert">Convert</button>
+                    <tab-page page="markdown">
+                        <textarea id="markdown">Markdown</textarea>
+                    </tab-page>
+                </section>
+
+                <section>
+                    <output id="output">Output</output>
+                </section>
+            </section>
+        </tab-view>
+        <button id="convert">Convert</button>
+        <p>Feel free to edit the above!</p>
+        <p>In the template, you can use <kbd>{{ £variable_name }}</kbd> or <kbd>{{ £variable_name | lowercase }}</kbd>. Then in the Markdown tab, include the variable name in the <kbd>:meta</kbd> section.</p>
+        <p>This is all documented on <a href="https://crates.io/crates/blogs-md-easy">Crates.io</a></p>
+
+        <h3>BootstrapAlerts</h3>
+        <p>
+            One of my first repositories - and one that got my first ever star! - was <a href="https://github.com/BritishWerewolf/BootstrapAlerts">BootstrapAlerts</a>, a simple library that would programmatically create <code>div</code>s that could be styled with Bootstrap.<br>
+            After developing this library around jQuery, I did a slight rewrite that was dependency free.
+        </p>
+        <p>
+            This repo has an incredibly thorough documentation through the README, which is something I have always tried to maintain throughout all projects.<br>
+            As someone that respects developers that write thorough and effective documentation, I knew that it is something that I wanted to ensure I do for other developers.
+        </p>
+
+
+        <h3>PHP and the Laravel framework</h3>
+        <p>Unfortunately, the period of time between here and last year was not spent working on anything Open Source, but it was mostly working on Laravel projects.</p>
+        <p>Two projects of note were an accreditation portal that handled Questions and Answers to determine if businesses meet a criteria. The other project was a portal that could store contractors, equipment, locations and projects. These could be assigned to determine who and what is where. We could then create PDFs for a contractors work history to store in a site folder.</p>
+        <p>Interestingly, this second project led me to uncovering <a href="https://stackoverflow.com/q/51042571/3578036">how Laravel builds queries for multiple inserts</a>.</p>
+
+        <h3>Advent of Code participation</h3>
+        <p>
+            Last Christmas <strike>I gave you</strike>, I started solving some of the puzzles on Advent of Code.<br>
+            This was really good fun, and a great way to practice with Rust. Personally, I am very much a practical learner; and Advent of Code is fantastic as it gives &quot;real world&quot; examples. That is to say, that having us parse the text for the relevant information before creating a solution.
+        </p>
+        <p>I didn't solve many of the days' puzzles as I was still trying to learn the language; but I was very proud of what <a href="https://github.com/BritishWerewolf/advent-of-code">I did achieve</a>.</p>
+
+        <h3>Yew Todo List</h3>
+        <p>
+            Because it's somewhat of a rite of passage, I decided to build a todo list using the <a href="https://yew.rs">Yew</a> framework.<br>
+            I chose Yew because it felt very similar to Vue or React through it's use of components, props and state.
+        </p>
+        <p>This entire app was built with Rust, compiled to WASM!</p>
+        <p>
+            That means that all interactions are handled by Rust: dark mode toggle, adding items, editing items, deleting items and opening confirmation box, managing the store and state of the data.<br>
+            There's definitely a lot of promise here, that I'd love to explore.
+        </p>
+
+        <h2>My Values and Beliefs</h2>
+        <h3>Old School thinking</h3>
+        <p>Perhaps it's due to how I started in the industry, but I was very young and had to teach myself everything. As a result, I ended up learning how to do pretty much everything I wanted on my own. At the time, I thought that if I used a third party library, then I'd either have to pay or accredit them on the site, so I avoided it.</p>
+        <p>This meant that while many developers were recommending using <kbd>$("#my-element")</kbd> to get an element with a particular ID, I was using the less glamourous <kbd>document.getElementById("my-element")</kbd>.</p>
+        <p>
+            Perhaps this was also due to the fact that I was in an industry that was still using IE6 long after they should have been...<br>
+            Engrained in my brain is <kbd>&lt;!--[if lte IE 6]--&gt;</kbd>. Urgh, that's made me shudder just thinking about it! For many, many years, I had a tab open for <a href="https://caniuse.com">Can I Use</a> almost permanently. Even now, I find myself double checking if I can use features that have like 95% coverage!
+        </p>
+        <p>Do you remember a time before Flexbox? <a href="https://x.com/BritWerewolf/status/1773074470019739815">Because I do</a>, and I never want to take it for granted!</p>
+
+        <h3>No Favourites</h3>
+        <p>
+            I also love to learn new things, something I find both fun, but incredibly useful.<br>
+            It's quite common for developers to chose a framework like sports fans support their favourite team. Rather than looking objectively at what their application is required to do, and what tools they can use for that.
+        </p>
+        <p>
+            For my portfolio I decided to use Pico CSS framework and just plain JavaScript.<br>
+            This is aimed at being a simple site, that doesn't need many bells and whistles, but should load content quickly.<br>
+            While it's possible to have used my go to Tailwind, but (as outlined in <a href="https://britishwerewolf.github.io/blogs/2024-02-19-pico-v2-release.html">my blog post</a>), Pico is mostly class free, meaning that I could focus on the content of the site.<br>
+            Comparing this to my todo list app, which I chose Yew and Tailwind; in this case I wanted chose frameworks that were more versatile which was ideal in that scenario.
+        </p>
+        <p>
+            You may have also noticed that I didn't opt for a frontend framework for the JavaScript in this site; just a simple custom components.<br>
+            Typically I would reach for VueJS if I wanted to create some form of reactive component, but in this case I think it would be overkill, and hence I chose to write my own components.<br>
+            The use case here was just to create a tab view element, that would contain some controls which in turn would toggle the specified page into view. Relatively easy to implement (all three components come in at under 125 lines!), and with a 95% coverage on Can I Use, it feels like something that needs to be embraced more.
+        </p>
+
+        <h3>Good quality documentation</h3>
+        <p>As I've touched on above, I very much value good quality documentation and code. I think this is courtesy of the years spent making Laravel apps, and consulting their (perfect!) documentation.</p>
+        <p>
+            Using <a href="https://crates.io/crates/blogs-md-easy">Blogs Made Easy</a> as an example, I have put the installation and usage instructions at the very top; before going on to explain, in detail, each argument with accompanying code block examples.<br>
+            In my opinion, concise code block examples are the most important part of any documentation. My time spent asking and answering questions on Stack Overflow, has led me to utilising this skill somewhat regularly; and, I believe, to a good standard.
+        </p>
+
+        <h3>Comments, and the importance of them</h3>
+        <p>
+            Comments are another part of documentation that I believe should be done with care.<br>
+            I have worked on many projects where there have been comments like &quot;create variable&quot; or &quot;check if variable is 'some string'&quot;. In my opinion, these type of comments should just be removed as they offer nothing of value and only aim to explain what we already know.
+        </p>
+        <p>Personally, I believe there should be two types of comments: How and Why.</p>
+        <p>
+            <strong>How</strong> comments (sometimes I refer to them as &quot;What comments&quot;) should be used to explain how a block of code works, or what it does. Normally used at the start of a particular block of code, these comments are used to help any developer understand the code without having to read the code.<br>
+            Here's <a href="https://github.com/BritishWerewolf/blogs-md-easy/blob/main/src/main.rs#L582">an example from one of my projects</a>, which is used to explain what the multiline filter iterator is doing.
+        </p>
+        <p><strong>Why</strong> comments are used to explain why a particular decision was taken for this block of code. I probably use these types of comments the most, like <a href="https://github.com/BritishWerewolf/blogs-md-easy/blob/main/src/main.rs#L452">this example</a> where I explain why I am performing a sort on the offset.</p>
+
+        <h2>So, why should you hire me?</h2>
+        <p>Good question.</p>
+        <p>I've been writing code for a long time; both for a living and a hobby.</p>
+        <p>At my current position, I am working remotely from the UK for a company based in New Jersey. The time difference is 4 hours, so I will be absolutely familiar with working skewed hours.</p>
+        <p>With a wide skill set in both full stack development, but also systems programming with C# and Rust. The latter language being one that I am focussing a lot of attention on.</p>
+        <p>Did I mention that I enjoy simplicity? Well, I do and it's one of the reasons I built Blogs Made Easy; a simple way to create static pages that achieve <a href="https://x.com/BritWerewolf/status/1772282262572130739">Perfect LightHouse scores!</a></p>
+        <p>I hope you consider me for this position.</p>
+        <p>
+            Thank you for your time.<br>
+            Harry Cartwright (<a href="https://github.com/BritishWerewolf">British Werewolf</a>)
+        </p>
+    </main>
 </body>
 </html>
