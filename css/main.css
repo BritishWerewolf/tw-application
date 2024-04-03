@@ -8,10 +8,15 @@
     @apply transition-colors;
 }
 
+::selection, ::-moz-selection {
+    @apply text-orange-300 dark:text-orange-700;
+    @apply bg-orange-700 dark:bg-orange-300;
+}
+
 html, body { @apply p-2; }
 
-h1 { @apply text-orange-600 dark:text-orange-400; }
-h1 s { @apply text-orange-400 dark:text-orange-600; }
+h1 { @apply text-orange-600 dark:text-orange-500; }
+h1 s { @apply text-orange-300 dark:text-orange-800; }
 h1:not(:first-of-type), h2, h3 { @apply mt-6; }
 h1, h2, h3 { @apply mb-2 font-bold; }
 h1 { @apply text-4xl; }
@@ -46,7 +51,7 @@ tab-view-control, #convert {
 }
 
 tab-view-control.active, #convert {
-    @apply bg-orange-300 dark:bg-orange-700;
+    @apply bg-orange-400 dark:bg-orange-500;
 }
 #convert {
     @apply ml-auto;
