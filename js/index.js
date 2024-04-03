@@ -5,10 +5,10 @@ function convert() {
     const markdown = document.getElementById("markdown");
     const output = document.getElementById("output");
 
-    if (template?.textContent && markdown?.textContent && output?.textContent) {
+    if (template?.value && markdown?.value && output?.textContent) {
         output.textContent = wasm.convert(
-            template.textContent,
-            [markdown.textContent],
+            template.value,
+            [markdown.value],
         )[0];
     }
 }
@@ -18,11 +18,11 @@ const markdown = document.getElementById("markdown");
 const convertBtn = document.getElementById("convert");
 
 if (template) {
-    template.textContent = "<html>\n<head>\n<title>{{ £title }}</title>\n</head>\n<body>\n<h1>{{ £title | uppercase }} by {{ £author }}</h1>\n<main>{{ £content }}</main>\n</body>\n</html>";
+    template.value = "<html>\n<head>\n<title>{{ £title }}</title>\n</head>\n<body>\n<h1>{{ £title | uppercase }} by {{ £author }}</h1>\n<main>{{ £content }}</main>\n</body>\n</html>";
 }
 
 if (markdown) {
-    markdown.textContent = ":meta\nauthor = John Doe\n:meta\n# Hello, World!\nIt's nice to meet you!";
+    markdown.value = ":meta\nauthor = John Doe\n:meta\n# Hello, World!\nIt's nice to meet you!";
 }
 
 convertBtn.addEventListener("click", convert);
