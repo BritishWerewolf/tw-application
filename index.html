@@ -13,11 +13,17 @@
 <body>
     <main>
         <h1>Hello, <s>World</s> Tailwind!</h1>
-        <p>
+        <p class="text-lg md:text-xl">
             Hey I'm Harry Cartwright.<br>
             I've been writing programs since I was 12, and in the <a href="https://stackexchange.com/leagues/1/alltime/stackoverflow/2008-07-31/3578036#3578036">top 10% of users on StackOverflow</a>.<br>
             With a passion for simplicity, and love of the basics; I like to achieve as much as possible, with the fewest amount of dependencies.
         </p>
+
+        <label for="theme-switcher" class="inline-flex items-center cursor-pointer slide-from-left">
+            <input id="theme-switcher" type="checkbox" value="" class="sr-only peer">
+            <div class="relative w-11 h-6 bg-gray-400 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-600"></div>
+            <span class="text-sm font-medium text-gray-900 ms-3 dark:text-gray-300">Anyway, here's dark mode.</span>
+        </label>
 
         <h2>What I've Done</h2>
         <p>While you try not to sing Linkin Park, I'll explain the projects I've worked on.</p>
@@ -36,6 +42,7 @@
             <section class="controls">
                 <tab-view-control to="template">Template</tab-view-control>
                 <tab-view-control to="markdown">Markdown</tab-view-control>
+                <button id="convert">Convert</button>
             </section>
 
             <section class="pages">
@@ -54,7 +61,6 @@
                 </section>
             </section>
         </tab-view>
-        <button id="convert">Convert</button>
         <p>Feel free to edit the above!</p>
         <p>In the template, you can use <kbd>{{ £variable_name }}</kbd> or <kbd>{{ £variable_name | lowercase }}</kbd>. Then in the Markdown tab, include the variable name in the <kbd>:meta</kbd> section.</p>
         <p>This is all documented on <a href="https://crates.io/crates/blogs-md-easy">Crates.io</a></p>
